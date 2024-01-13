@@ -1,1 +1,85 @@
-<h1>From Index View</h1>
+<header>
+    <div class="top-header">
+        <div class="logo search">
+            <h1><a href="uk.ixl.com"><span class="i-color">I</span><span class="xl-color">XL</span></a></h1>
+            <div class="search-box">
+                <input class="search-input" type="search" name="search" placeholder="Search topic, skills, and more" />
+                <i>Search</i>
+            </div>
+        </div>
+        <div class="form-header">
+            <form action="#">
+                <input class="form-input" type="text" name='username' placeholder="Username">
+                <input class="form-input" type="password" name='password' placeholder="Password">
+                <input class="form-input-submit" type="submit" value="Submit">
+                <input type="checkbox" name="Remember" id="remember">
+                <label for="remember">Remember</label>
+                <select name="country" id="country">
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Brasil">Brasil</option>
+                </select>
+            </form>
+        </div>
+    </div>
+</header>
+<nav>
+    <div id="nav">
+        <ul class="outer-ul">
+            <li><a href="maths">Learning</a></li>
+            <li><a href="maths">Diagonistics</a></li>
+            <li><a href="maths">Analytics</a></li>
+        </ul>
+        <div class="membership-btn">
+            <a href="#">MEMBERSHIP</a>
+        </div>
+    </div>
+    <div class="sub-menu">
+        <nav class="sub-nav">
+            <ul class="sub-nav-list">
+                <li><a class="sub-nav-link" href="#"><i>maths icon</i> Maths</a></li>
+                <li><a class="sub-nav-link" href="#"><i>eng icon</i> English<span></span></a></li>
+                <li><a class="sub-nav-link" href="#"><i>rec icon</i> Recommendations<span></span></a></li>
+                <li><a class="sub-nav-link" href="#"><i>skill icon</i> Skill plans<span></span></a></li>
+                <li><a class="sub-nav-link" href="#"><i>award icon</i> Awards</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="active-page">
+        <p><span><a href="#">Year 1 </a></span><span>> </span> <span>T.14 Months of the year </span>9R4</p>
+        <div class="share-skills">Share skill</div>
+    </div>
+</nav>
+<!-- Flash messages for displaying feedback -->
+<% flash.each do |key, message| %>
+  <div class="<%= key %>">
+    <h2><%= message %></h2>
+  </div>
+<% end %>
+
+<section class="quiz-section">
+    <%= form_with model: @question, url: submit_answer_path, class: 'questions' do |form| %>
+      <div class="learn-link"><a href="#">Learn with an example <span>&#8964;</span></a></div>
+      <div class="quiz">
+        <% @questions.each do |question|%>
+          <%= form.hidden_field :id, value: question.id %>
+          <h3 class='question'><%= question.question %></h3>
+          <% shuffled_options = question.random_options %>
+          <div class='form-option'>
+            <% shuffled_options.each do |option| %>
+              <div class="option">
+                <%= form.label "#{option}_radio", class: 'radio-label' do %>
+                  <%= form.radio_button :user_answer, option, class: 'radio-button', id: "#{option}_radio" %>
+                  <%=option%>
+                <%end%>
+              </div>
+            <%end%>
+          </div>
+        <%end%>
+        <%= form.submit "Submit", class: "submit" %>
+      </div>
+    <% end %>
+    <div class="details">
+      For details
+    </div>
+</section>

@@ -13,3 +13,270 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header,
+.top-header,
+.logo,
+.search-box,
+.membership-btn,
+.outer-ul {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    flex-direction: column;
+    padding: 0.5rem 5rem;
+}
+
+.top-header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.i-color {
+    color: #00aeef;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo h1 {
+    padding-right: 1.5rem;
+    font-family: verdana, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.search-box {
+    width: 50%;
+    margin: auto 0;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.search-box .search-input {
+    border: none;
+    width: 70%;
+    padding-bottom: 6px;
+}
+
+.xl-color {
+    color: #ffca05;
+    letter-spacing: -5px;
+}
+
+.form-input,
+.form-input-submit {
+    border: 1px solid grey;
+    padding: 5px;
+    border-radius: 3px;
+    width: 120px;
+    margin-right: 0.5rem;
+}
+
+.form-input-submit {
+    width: 60px;
+    color: #fff;
+    background-color: #52B700;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #52B700;
+    padding: 0 5rem;
+}
+
+.membership-btn {
+    background-color: #4FD7C0;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.outer-ul {
+    list-style: none;
+    width: 35%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.75rem;
+    font-weight: normal;
+    padding: 1rem 0;
+}
+
+.outer-ul a,
+.membership-btn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-menu {
+    padding: 0 5rem;
+}
+
+/* .sub-nav {
+    border: 2px solid green;
+} */
+
+.sub-menu .sub-nav-list {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.sub-nav-list li {
+    width: 100%;
+}
+
+.sub-nav-link {
+    padding: 0.75rem 0;
+    font-weight: 500;
+    width: inherit;
+    text-align: center;
+    color: grey;
+    display: block;
+}
+
+.sub-nav-link>span {
+    color: grey;
+    display: block;
+    border-right: 1px solid grey;
+    width: inherit;
+    padding: 0.8rem 0;
+    margin-top: -26px;
+}
+
+.sub-nav-link:focus,
+.sub-nav-link:hover {
+    border-bottom: 4px solid #00aeef;
+}
+
+.sub-nav-link:active,
+.sub-nav-link:focus {
+    color: #00aeef;
+}
+
+.active-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F4F8FA;
+    padding: 0.25rem 5rem;
+    border-top: 1px solid grey;
+}
+
+.active-page p>span {
+    padding-right: 8px;
+}
+
+.active-page .share-skills {
+    border: none;
+    border-radius: 3px;
+    padding: 0.25rem;
+    background-color: #fff;
+}
+
+/* Success Message */
+.success,
+.error {
+    display: flex;
+    justify-content: center;
+}
+
+.success h2,
+.error h2 {
+    border: 2px solid white;
+    width: 25%;
+    height: 25%;
+    color: #52B700;
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.error h2 {
+    color: red;
+}
+
+.quiz-section {
+    display: flex;
+    padding: 0 10rem;
+    justify-content: space-around;
+}
+
+.questions {
+    flex: 1;
+}
+
+.questions .learn-link {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.learn-link a {
+    color: #00aeef;
+    padding: 0.275rem;
+    display: inline-block;
+    border-bottom: 1px solid grey;
+}
+
+.question {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding-bottom: 1.5rem;
+}
+
+.form-option {
+    display: flex;
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.option {
+    padding: 0.75rem 0.5rem;
+    padding-left: 0;
+    margin-right: 0.5rem;
+}
+
+.option:focus {
+    border: 3px solid #00aeef;
+    background-color: #E0F4FE;
+}
+
+.radio-label {
+    border: 2px solid #4FD7C0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0.75rem 2.5rem;
+}
+
+.radio-label:focus,
+.radio-label:hover {
+    border: 3px solid #00aeef;
+    background-color: #E0F4FE;
+}
+
+.radio-button {
+    opacity: 0;
+    display: none;
+}
+
+.submit {
+    border: none;
+    background-color: #52B700;
+    color: #fff;
+    font-size: 0.95rem;
+    padding: 0.45rem 3rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
