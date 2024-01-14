@@ -1,10 +1,12 @@
+#!/usr/bin/env bash
 # exit on error
 set -o errexit
 
-bundle install
-bundle exec rails assets:precompile
-bundle exec rails assets:clean
-bundle exec rails db:migrate
+echo "Current directory: $(pwd)"
+ls -l ./bin
+echo "Executing './bin/rails server'"
+./bin/rails server
 
-#if you have seeds to run add:
-# bundle exec rails db:seed
+bundle install
+./bin/rails assets:precompile
+./bin/rails assets:clean
