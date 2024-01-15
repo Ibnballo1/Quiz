@@ -62,19 +62,21 @@
       <div class="learn-link"><a href="#">Learn with an example <span>&#8964;</span></a></div>
       <div class="quiz">
         <% @questions.each do |question|%>
-          <%= form.hidden_field :id, value: question.id %>
-          <h3 class='question'><%= question.question %></h3>
-          <% shuffled_options = question.random_options %>
-          <div class='form-option'>
-            <% shuffled_options.each do |option| %>
-              <div class="option">
-                <%= form.label "#{option}_radio", class: 'radio-label' do %>
-                  <%= form.radio_button :user_answer, option, class: 'radio-button', id: "#{option}_radio" %>
-                  <%=option%>
-                <%end%>
-              </div>
-            <%end%>
-          </div>
+          <%if question.id == 1 %>
+            <%= form.hidden_field :id, value: question.id %>
+            <h3 class='question'><%= question.question %></h3>
+            <% shuffled_options = question.random_options %>
+            <div class='form-option'>
+              <% shuffled_options.each do |option| %>
+                <div class="option">
+                  <%= form.label "#{option}_radio", class: 'radio-label' do %>
+                    <%= form.radio_button :user_answer, option, class: 'radio-button', id: "#{option}_radio" %>
+                    <%=option%>
+                  <%end%>
+                </div>
+              <%end%>
+            </div>
+          <%end%>
         <%end%>
         <%= form.submit "Submit", class: "submit" %>
       </div>

@@ -6,4 +6,4 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Question.create(question: 'Which month comes right after Febuary?', option1: 'April', option2: 'November', option3: 'January', option4: 'March', hint: 'March')
+# Question.create(question: 'Which month comes right after Febuary?', option1: 'April', option2: 'November', option3: 'January', option4: 'March', hint: 'March')
