@@ -4,7 +4,7 @@
             <h1><a href="uk.ixl.com"><span class="i-color">I</span><span class="xl-color">XL</span></a></h1>
             <div class="search-box">
                 <input class="search-input" type="search" name="search" placeholder="Search topic, skills, and more" />
-                <i>Search</i>
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
         </div>
         <div class="form-header">
@@ -12,8 +12,8 @@
                 <input class="form-input" type="text" name='username' placeholder="Username">
                 <input class="form-input" type="password" name='password' placeholder="Password">
                 <input class="form-input-submit" type="submit" value="Submit">
-                <input type="checkbox" name="Remember" id="remember">
-                <label for="remember">Remember</label>
+                <input class="remember" type="checkbox" name="Remember" id="remember">
+                <label class="remember-me" for="remember">Remember</label>
                 <select name="country" id="country">
                     <option value="United Kingdom">United Kingdom</option>
                     <option value="Australia">Australia</option>
@@ -26,9 +26,9 @@
 <nav>
     <div id="nav">
         <ul class="outer-ul">
-            <li><a href="maths">Learning</a></li>
-            <li><a href="maths">Diagonistics</a></li>
-            <li><a href="maths">Analytics</a></li>
+            <li><a href="#">Learning</a></li>
+            <li><a href="#">Diagonistics</a></li>
+            <li><a href="#">Analytics</a></li>
         </ul>
         <div class="membership-btn">
             <a href="#">MEMBERSHIP</a>
@@ -46,7 +46,7 @@
         </nav>
     </div>
     <div class="active-page">
-        <p><span><a href="#">Year 1 </a></span><span>> </span> <span>T.14 Months of the year </span>9R4</p>
+        <p><span><a href="#">Year 1 </a></span><span><%= image_tag('gt.png', alt: 'greater than sign', height: '12') %> </span> <span>T.14 Months of the year </span><span class="r4">9R4</span></p>
         <div class="share-skills">Share skill</div>
     </div>
 </nav>
@@ -59,14 +59,15 @@
 
 <section class="quiz-section">
     <%= form_with model: @question, url: submit_answer_path, class: 'questions' do |form| %>
-      <div class="learn-link"><a href="#">Learn with an example <span>&#8964;</span></a></div>
+      <div class="learn-link"><a class="link" href="#">Learn with an example</a><%= image_tag('v-shape.svg', alt:'v-shape' ) %></div>
       <div class="quiz">
         <% @questions.each do |question|%>
           <%if question.id == 1 %>
             <%= form.hidden_field :id, value: question.id %>
-            <h3 class='question'><%= question.question %></h3>
+            <h3 class='question'><i class="fa fa-volume-up for-question" aria-hidden="true"></i><%= question.question %></h3>
             <% shuffled_options = question.random_options %>
             <div class='form-option'>
+              <i class="fa fa-volume-up" aria-hidden="true"></i>
               <% shuffled_options.each do |option| %>
                 <div class="option">
                   <%= form.label "#{option}_radio", class: 'radio-label' do %>
@@ -82,6 +83,17 @@
       </div>
     <% end %>
     <div class="details">
-      For details
+      <div class="scores">
+          <h1 class="question-answer">Questions<br />answered</h1>
+          <p class="score qa">0</p>
+      </div>
+      <div class="scores">
+          <h1 class="time">Time<br />elapsed</h1>
+          <p class="score pause-play">PAUSED</p>
+      </div>
+      <div class="scores">
+          <h1 class="smart-score">SmartScore<br /><span class="over-100">out of 100 <span class="q-tag">?</span></span></h1>
+          <p class="score overall">0</p>
+      </div>
     </div>
 </section>
