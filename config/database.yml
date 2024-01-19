@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   database: Quiz_development
-  username: <%= ENV["DEBT_MANAGER_DATABASE_USERNAME"] %>
-  password: "<%= ENV["DEBT_MANAGER_DATABASE_PASSWORD"] %>"
+  username: postgres
+  password: "@Ajibaye1"
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,8 +60,8 @@ development:
 test:
   <<: *default
   database: Quiz_test
-  username: <%= ENV["DEBT_MANAGER_DATABASE_USERNAME"] %>
-  password: "<%= ENV["DEBT_MANAGER_DATABASE_PASSWORD"] %>"
+  username: <%= ENV["DB_USER"] %>
+  password: "<%= ENV["DB_PWD"] %>"
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
