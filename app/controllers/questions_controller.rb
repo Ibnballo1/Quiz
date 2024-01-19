@@ -19,13 +19,9 @@ class QuestionsController < ApplicationController
         user_submitted_answer = params[:user_answer]
     
         if user_submitted_answer == correct_answer
-          # Correct answer logic
           flash[:success] = "✔ Excellent"
-          # ... (e.g., update scores, redirect to next question)
         else
-          # Incorrect answer logic
           flash[:error] = "Sorry, incorrect..."
-          # ... (e.g., show feedback, allow re-attempt)
         end
     
         redirect_to questions_path

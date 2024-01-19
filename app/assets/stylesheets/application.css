@@ -250,17 +250,21 @@ input[type='password']:focus {
 .success,
 .error {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.4);
 }
 
 .success h2,
 .error h2 {
-    border: 2px solid white;
-    width: 25%;
-    height: 25%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    border: 2px solid #ddd;
+    border-radius: 3px;
     color: #52B700;
-    font-size: 3rem;
-    padding: 1rem;
+    font-size: 4rem;
+    padding: 2rem 1rem;
 }
 
 .error h2 {

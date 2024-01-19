@@ -51,13 +51,14 @@
     </div>
 </nav>
 <!-- Flash messages for displaying feedback -->
+
 <% flash.each do |key, message| %>
-  <div class="<%= key %>">
+  <div class="<%= key %>" data-controller="flash" data-flash-success=<%=message%>>
     <h2><%= message %></h2>
   </div>
 <% end %>
 
-<section class="quiz-section">
+<section class="quiz-section" id="<%= flash[:success] ? 'success-section' : 'error-section'%>">
     <%= form_with model: @question, url: submit_answer_path, class: 'questions' do |form| %>
       <div class="learn-link"><a class="link" href="#">Learn with an example</a><%= image_tag('v-shape.svg', alt:'v-shape' ) %></div>
       <div class="quiz">
